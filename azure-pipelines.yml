@@ -1,4 +1,18 @@
 # Docker
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      Write-Host "Git Merge"
+      git remote add microsoft/fhir-server https://github.com/microsoft/fhir-server.git
+      git remote -v
+      git fetch microsoft/fhir-server
+      git checkout origin
+      git merge microsoft/fhir-server/master
+      git push origin master
+      
 # Build a Docker image 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
