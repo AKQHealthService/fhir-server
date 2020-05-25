@@ -1,4 +1,11 @@
 # Docker
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Azure Container Registry'
+    azureSubscription: 'HSE365 - Azure Global service connection'
+    azureContainerRegistry: '{"loginServer":"hse365fhir.azurecr.io", "id" : "/subscriptions/06b223fa-fc24-421e-8e3b-4cf40d07dde0/resourceGroups/RG-HSE-Container-Regsitry/providers/Microsoft.ContainerRegistry/registries/hse365fhir"}'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Run a Docker Compose command'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
